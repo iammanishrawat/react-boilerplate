@@ -1,0 +1,20 @@
+.heading-area {
+  ul {
+    display: flex;
+    gap: 0.554rem;
+    align-items: center;
+    li {
+      display: flex;
+      color: var(--subtext-color);
+      gap: 0.254rem;
+      p {
+        font-weight: 500;
+      }
+      &:last-child {
+        p {
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+}
