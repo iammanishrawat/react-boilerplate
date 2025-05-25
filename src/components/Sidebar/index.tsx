@@ -1,27 +1,30 @@
 import { useState } from 'react'
 import logo from '../../assets/images/pacific-health-logo.png'
 import './style.scss'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 const SidebarComponent = ({ isOpen }: any) => {
   const [openMenu, setOpenMenu] = useState<string | null>(null)
-
+  const location = useLocation()
   const toggleSubmenu = (menuKey: string) => {
     setOpenMenu((prev) => (prev === menuKey ? null : menuKey))
   }
   return (
     <>
       <div
-        className={`h-full px-3 py-4 overflow-y-auto sidebar transition-all duration-300 ${
-          isOpen ? 'block' : 'hidden'
-        }`}
+        className={`h-full px-3 py-4 overflow-y-auto sidebar transition-all duration-300 ${isOpen ? 'block' : 'hidden'
+          }`}
       >
         <img src={logo} alt="" className="logo" />
         <ul className="space-y-2 font-medium mt-6">
           <li>
             <Link
               to={'/dashboard'}
-              className="flex items-center p-3 rounded-lg group text-gray-600 hover:bg-primary hover:text-white cursor-pointer justify-between"
+              className={`flex items-center p-3 rounded-lg group cursor-pointer justify-between ${location.pathname === '/dashboard'
+                ? 'bg-primary text-white'
+                : 'text-gray-600 hover:bg-primary hover:text-white'
+                }`}
             >
+
               <div className="flex items-center space-x-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +46,7 @@ const SidebarComponent = ({ isOpen }: any) => {
           </li>
 
           <li>
-            <div className="flex items-center p-3 rounded-lg group text-gray-600 hover:bg-primary hover:text-white cursor-pointer">
+            <div className="flex items-center p-3 rounded-lg group text-gray-600 hover:bg-primary hover:text-white cursor-pointer" onClick={() => toggleSubmenu('agents')}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -60,7 +63,6 @@ const SidebarComponent = ({ isOpen }: any) => {
               </svg>
               <span className="flex-1 ms-3 whitespace-nowrap">Agents</span>
               <svg
-                onClick={() => toggleSubmenu('agents')}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 20 20"
@@ -78,19 +80,22 @@ const SidebarComponent = ({ isOpen }: any) => {
             {/* Submenu */}
             {openMenu === 'agents' && (
               <ul
-                className={`ml-10 mt-1 space-y-1 text-sm text-gray-600 overflow-hidden transition-all duration-300 ease-in-out ${
-                  openMenu === 'agents'
-                    ? 'max-h-40 opacity-100'
-                    : 'max-h-0 opacity-0'
-                }`}
+                className={`submenu ml-10 mt-1 space-y-1 text-sm text-gray-600 overflow-hidden transition-all duration-300 ease-in-out ${openMenu === 'agents'
+                  ? 'max-h-40 opacity-100'
+                  : 'max-h-0 opacity-0'
+                  }`}
               >
                 <li>
                   <Link
                     to={'/agent-lists'}
-                    className="block py-1 cursor-pointer hover:text-primary"
+                    className={`block py-1 cursor-pointer ${location.pathname === '/agent-lists'
+                      ? 'text-primary font-semibold'
+                      : 'hover:text-primary'
+                      }`}
                   >
                     Agent lists
                   </Link>
+
                 </li>
                 <li>
                   <Link
@@ -105,7 +110,7 @@ const SidebarComponent = ({ isOpen }: any) => {
           </li>
 
           <li>
-            <div className="flex items-center p-3 rounded-lg group text-gray-600 hover:bg-primary hover:text-white cursor-pointer">
+            <div className="flex items-center p-3 rounded-lg group text-gray-600 hover:bg-primary hover:text-white cursor-pointer" onClick={() => toggleSubmenu('chatbot')}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -122,7 +127,6 @@ const SidebarComponent = ({ isOpen }: any) => {
               </svg>
               <span className="flex-1 ms-3 whitespace-nowrap">Chatbot</span>
               <svg
-                onClick={() => toggleSubmenu('chatbot')}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 20 20"
@@ -140,11 +144,10 @@ const SidebarComponent = ({ isOpen }: any) => {
             {/* Submenu */}
             {openMenu === 'chatbot' && (
               <ul
-                className={`ml-10 mt-1 space-y-1 text-sm text-gray-600 overflow-hidden transition-all duration-300 ease-in-out ${
-                  openMenu === 'chatbot'
-                    ? 'max-h-40 opacity-100'
-                    : 'max-h-0 opacity-0'
-                }`}
+                className={`submenu ml-10 mt-1 space-y-1 text-sm text-gray-600 overflow-hidden transition-all duration-300 ease-in-out ${openMenu === 'chatbot'
+                  ? 'max-h-40 opacity-100'
+                  : 'max-h-0 opacity-0'
+                  }`}
               >
                 <li>
                   <Link

@@ -1,0 +1,123 @@
+.agent-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 680px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  gap: 1rem;
+  .inner {
+    background-color: var(--white-color);
+    padding: 1rem;
+    border-radius: 0.854rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      @media (max-width: 1199px) {
+        gap: 1rem;
+      }
+      .agent-info-area {
+        display: flex;
+        align-items: center;
+        gap: 0.554rem;
+        @media (max-width: 1199px) {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+        img {
+          max-width: 50px;
+          height: 50px;
+        }
+        h5 {
+          font-size: 1rem;
+          color: var(--text-color);
+        }
+        p {
+          font-size: 0.854rem;
+          color: var(--text-color);
+        }
+      }
+      .agent-subscribe-area {
+        @media (max-width: 1199px) {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+        button {
+          font-size: 0.854rem;
+          padding: 0.554rem 1rem;
+          border-radius: 0.354rem;
+          width: 100%;
+          &.subscribed-btn {
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+          }
+          &.subscribe-btn {
+            border: 1px solid var(--secondary-color);
+            color: var(--secondary-color);
+          }
+        }
+      }
+    }
+    .pricing-area {
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: 1199px) {
+        flex-wrap: wrap;
+      }
+      .left-area {
+        h5 {
+          font-size: 0.954rem;
+          color: var(--text-color);
+          span {
+            font-weight: 400;
+          }
+        }
+      }
+      .right-area {
+        p {
+          font-size: 0.954rem;
+          color: var(--text-color);
+        }
+        h6 {
+          font-weight: 600;
+          color: var(--text-color);
+        }
+      }
+    }
+    .about-agent-area {
+      p {
+        font-size: 0.954rem;
+        color: var(--text-color);
+      }
+    }
+    .client-lists-area {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .left-area {
+        p {
+          display: flex;
+          gap: 0.254rem;
+          align-items: center;
+          font-size: 0.954rem;
+          color: var(--text-color);
+        }
+      }
+      .right-area {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,243 @@
+.auth-inner {
+  display: flex;
+  min-height: 100vh;
+  max-height: 100%;
+
+  .left-area {
+    background-position: bottom;
+    background-repeat: no-repeat;
+    padding: 40px;
+    flex: 1 1 70%;
+    max-width: 70%;
+    position: relative;
+    .float-area {
+      position: absolute;
+      bottom: 50px;
+      left: 50px;
+      h1 {
+        text-transform: uppercase;
+        font-size: 3rem;
+        font-weight: 600;
+        color: var(--secondary-color);
+      }
+
+      p {
+        margin: 0;
+        font-size: 0.954rem;
+        line-height: 1.254rem;
+        color: var(--white-color);
+        max-width: 70%;
+      }
+    }
+  }
+
+  //   &.signup {
+  //     .left-area {
+  //       background-image: url("https://t3.ftcdn.net/jpg/00/55/84/26/360_F_55842649_49gArVJBocWh7Yfi3841fF038XZBEai9.jpg");
+  //       background-size: cover;
+  //     }
+  //   }
+
+  &.login {
+    .left-area {
+      //   background-image: url("https://medinous.com/wp-content/uploads/2024/12/pexels-cedric-fauntleroy-4266932-1.jpg");
+      background-size: cover;
+      background-image: linear-gradient(rgb(0 0 0 / 78%), rgb(0 0 0 / 62%)),
+        url("https://medinous.com/wp-content/uploads/2024/12/pexels-cedric-fauntleroy-4266932-1.jpg");
+    }
+  }
+
+  .right-area {
+    padding: 40px;
+    flex: 1 1 30%;
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+      text-align: center;
+      margin-top: 1rem;
+
+      span {
+        font-weight: 600;
+        color: var(--secondary-color);
+        cursor: pointer;
+      }
+    }
+
+    form {
+      .flex-inner {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: flex-end;
+
+        a {
+          text-decoration: none;
+          font-weight: 500;
+
+          &:first-child {
+            color: var(--text-color);
+          }
+
+          &:last-child {
+            color: var(--secondary-color);
+          }
+        }
+      }
+
+      .form-group {
+        margin-bottom: 0.5rem;
+
+        .form-control,
+        .form-select {
+          border-radius: 4px;
+          border: 0;
+          background-color: var(--bg-color);
+          height: 45px;
+          font-size: 0.854rem;
+          padding: 15px;
+          width: 100%;
+
+          &:focus {
+            box-shadow: none;
+            border: 1px solid var(--secondary-color);
+            outline: 0;
+          }
+        }
+
+        .form-select {
+          option {
+            display: flex;
+            gap: 0.5rem;
+          }
+        }
+
+        p {
+          cursor: pointer;
+        }
+
+        label {
+          font-size: 0.754rem;
+        }
+
+        input[type="checkbox"] {
+          accent-color: var(--secondary-color);
+          vertical-align: middle;
+        }
+
+        button.submit-btn {
+          background-color: var(--secondary-color);
+          color: var(--white-color);
+          text-decoration: none;
+          width: 100%;
+          display: flex;
+          border-radius: 0.354rem;
+          height: 45px;
+          align-items: center;
+          justify-content: center;
+          text-transform: uppercase;
+          cursor: pointer;
+        }
+
+        .flex-radiobtn {
+          display: flex;
+          gap: 1rem;
+          justify-content: flex-start;
+
+          .form-check-label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+
+            input[type="radio"] {
+              width: 1.5rem;
+              height: 1.5rem;
+              background-color: var(--secondary-color);
+              border-color: var(--secondary-color);
+
+              &:focus {
+                box-shadow: none;
+                outline: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .sso-area {
+      p {
+        text-align: center;
+        position: relative;
+        margin-bottom: 2rem;
+
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          height: 1px;
+          top: 50%;
+          background-color: var(--bg-color);
+          width: 30%;
+        }
+
+        &:before {
+          left: 0;
+        }
+
+        &:after {
+          right: 0;
+        }
+      }
+
+      //   .social-icons-inner {
+      //     display: flex;
+      //     gap: 0;
+      //     align-items: center;
+
+      //     p {
+      //       margin: 0 auto;
+      //       text-align: center;
+      //       display: flex;
+      //       flex-direction: column;
+      //       align-items: center;
+      //       text-decoration: none;
+      //       color: inherit;
+      //       gap: 0.5rem;
+
+      //       img {
+      //         width: 10%;
+      //       }
+      //     }
+      //   }
+
+      .login-social-icons-inner {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+
+        span {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          flex-wrap: nowrap;
+          color: inherit;
+          gap: 5px;
+          background-color: var(--bg-color);
+          height: 40px;
+          border-radius: 50px;
+          padding: 10px;
+          width: 100%;
+          justify-content: center;
+          cursor: pointer;
+
+          img {
+            width: 20%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -4,11 +4,13 @@
 
 :root{
     --primary-color: #4FC9DA;
-    --secondary-color: #AECC34;
+    --secondary-color: #e9720f;
     --text-color: #292929;
     --subtext-color: #5f5f5f;
     --border-color: #a5a5a5;
     --bg-color: #e5e5e5;
+    --white-color: #ffffff;
+
 }
 
 body{
